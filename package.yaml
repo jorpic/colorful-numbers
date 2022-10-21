@@ -1,0 +1,39 @@
+name:                colorful-numbers
+version:             0.1.0.0
+github:              "jorpic/colorful-numbers"
+license:             BSD3
+author:              "Max Taldykin"
+maintainer:          "jorpic@gmail.com"
+copyright:           "2022 Max Taldykin"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/colorful-numbers#readme>
+
+default-extensions:
+  - NoMonomorphismRestriction
+  - FlexibleContexts
+  - TypeFamilies
+  - TupleSections
+  - LambdaCase
+
+executables:
+  colorful-numbers-exe:
+    main:                Main.hs
+    source-dirs:         src
+    ghc-options:
+    - -Wall
+    dependencies:
+    - base >= 4.7 && < 5
+    - diagrams-lib
+    - diagrams-svg
+    - palette

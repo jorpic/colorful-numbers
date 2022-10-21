@@ -1,0 +1,44 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           colorful-numbers
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/colorful-numbers#readme>
+homepage:       https://github.com/jorpic/colorful-numbers#readme
+bug-reports:    https://github.com/jorpic/colorful-numbers/issues
+author:         Max Taldykin
+maintainer:     jorpic@gmail.com
+copyright:      2022 Max Taldykin
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/jorpic/colorful-numbers
+
+executable colorful-numbers-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_colorful_numbers
+  hs-source-dirs:
+      src
+  default-extensions:
+      NoMonomorphismRestriction
+      FlexibleContexts
+      TypeFamilies
+      TupleSections
+      LambdaCase
+  ghc-options: -Wall
+  build-depends:
+      base >=4.7 && <5
+    , diagrams-lib
+    , diagrams-svg
+    , palette
+  default-language: Haskell2010
