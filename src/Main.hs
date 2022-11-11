@@ -40,9 +40,9 @@ grid = vcat . map (hcat . map cell)
         red' = colorRamp 32 $ brewerSet OrRd 8
 
 grids :: [Int] -> Diagram SVG
-grids = hsep 1 . map col
+grids = vsep 1 . map col
   where
-    col i = vsep 1 $ map grid $ iterateN 3 (map diffPairs) $ numbers i
+    col i = hsep 1 $ map grid $ iterateN 3 (map diffPairs) $ numbers i
 
 row :: Int -> Diagram SVG
 row = hsep 1 . map grid . iterateN 3 (map diffPairs) . numbers
@@ -50,10 +50,10 @@ row = hsep 1 . map grid . iterateN 3 (map diffPairs) . numbers
 main :: IO ()
 main = do
     renderSVG
-        "grid.svg"
-        (mkSizeSpec $ V2 (Just 1400) (Just 800))
+        "svg/grid.svg"
+        (mkSizeSpec $ V2 (Just 800) (Just 1600))
         (grids [3,5,7,11,13,17,19,23,29])
     renderSVG
-        "row.svg"
+        "svg/row.svg"
         (mkSizeSpec $ V2 (Just 1200) (Just 500))
         (row 23)
